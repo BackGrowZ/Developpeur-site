@@ -30,7 +30,7 @@ function App() {
       <header>
         <Header />
       </header>
-      <section id='main' style={{marginTop:height}}>
+      <section id='main' style={{ marginTop: height }}>
         <Competence />
       </section>
     </>

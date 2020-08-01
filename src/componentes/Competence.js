@@ -12,13 +12,13 @@ export default function Competence() {
         (key % 2) ?
             <div key={`container-${key}`} className='competence-liste-droite'>
                 <i className={`${value[2]} fa-7x`} style={{ color: '#1a398b' }} />
-                <p className='competence-name' key={`name-${key}`}>{value[0]}</p><br />
+                <p className='competence-name' key={`name-${key}`}>{value[0]}</p>
                 <p key={`label-${key}`}>{value[1]}</p>
             </div>
             :
             <div key={`container-${key}`} className='competence-liste-gauche'>
                 <i className={`${value[2]} fa-7x`} style={{ color: '#1a398b' }} />
-                <p className='competence-name' key={`name-${key}`}>{value[0]}</p><br />
+                <p className='competence-name' key={`name-${key}`}>{value[0]}</p>
                 <p key={`label-${key}`}>{value[1]}</p>
             </div>
     )
