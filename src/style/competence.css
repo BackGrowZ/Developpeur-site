@@ -1,0 +1,36 @@
+#competence {
+    width: 90%;
+    margin: 80px auto 10px;
+}
+
+#competence-title {
+    text-align: center;
+    color: #1a398b;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+#competence-liste {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.competence-liste-gauche, .competence-liste-droite {
+    width: 80%;
+    margin: 5rem auto 0;
+}
+
+.competence-liste-gauche {
+    text-align: left;
+}
+
+.competence-liste-droite {
+    text-align: right;
+    height: 125px;
+}
+
+.competence-name {
+    color: #1a398b;
+    font-size: x-large;
+    margin-bottom: 0rem;
+}
