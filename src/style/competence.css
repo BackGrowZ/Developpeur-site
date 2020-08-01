@@ -1,14 +1,7 @@
 #competence {
     width: 90%;
-    margin: 80px auto 10px;
+    margin: 80px auto 50px;
     color: #555;
-}
-
-#competence-title {
-    text-align: center;
-    color: #1a398b;
-    font-size: xx-large;
-    font-weight: bold;
 }
 
 #competence-liste {
@@ -27,7 +20,6 @@
 
 .competence-liste-droite {
     text-align: right;
-    height: 125px;
 }
 
 .competence-name {

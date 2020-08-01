@@ -7,6 +7,18 @@
     background-color: #eee;
 }
 
+#cv {
+    display: flex;
+    background-color: #fff;
+}
+
+.categorie-title {
+    text-align: center;
+    color: #1a398b;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
 #backImage {
     width: 100%;
     position: fixed;
