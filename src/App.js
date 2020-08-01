@@ -4,6 +4,7 @@ import './style/style.css'
 import Header from './componentes/Header';
 import Competence from './componentes/Competence';
 import BackImage from './componentes/BackImage';
+import CV from './componentes/CV';
 
 function useWindowSize() {
   const [size, setSize] = useState([0, 0]);
@@ -32,6 +33,9 @@ function App() {
       </header>
       <section id='main' style={{ marginTop: height }}>
         <Competence />
+      </section>
+      <section id='cv'>
+        <CV />
       </section>
     </>
   );
