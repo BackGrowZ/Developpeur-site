@@ -26,12 +26,12 @@ function App() {
     <>
       <BackImage height={height} />
       <div className="App">
-        <Navbar />
+        <Navbar height={height} />
       </div>
       <header>
         <Header />
       </header>
-      <section id='main' style={{ marginTop: height }}>
+      <section id='competence' style={{ marginTop: height }}>
         <Competence />
       </section>
       <section id='cv'>

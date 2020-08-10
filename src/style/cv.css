@@ -2,3 +2,60 @@
     width: 90%;
     margin: 80px auto 50px;
 }
+
+#cv-presentation {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#cv-photo {
+    padding: 1rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+#cv-desc {
+    padding: 1rem;
+    flex-basis: 50%;
+}
+
+#cv-parcours {
+    margin: 5rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+#cv-experience, #cv-formation {
+    background-color: springgreen;
+    flex-basis: 50%;
+}
+
+.cercle-img {
+    border-radius: 100%;
+    width: auto;
+    max-height: 500px;
+}
+
+#download {
+    margin-top: 5rem;
+    padding: 1rem;
+    text-align: center;
+    border: #1a398b solid 3px;
+    width: auto;
+    cursor: pointer;
+}
+
+#detail-competence {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#langage, #framework, #bdd {
+    display: flex;
+    width: 33%;
+}

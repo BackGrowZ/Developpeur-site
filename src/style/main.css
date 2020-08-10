@@ -2,7 +2,7 @@
     margin: 0 .5rem;
 }
 
-#main {
+#competence {
     display: flex;
     background-color: #eee;
 }
@@ -26,4 +26,17 @@
     background-image: url('../img/header.jpg');
     background-position: center;
     background-size: cover;
+}
+
+.link-navbar {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.link-navbar:visited {
+    color: inherit;
+}
+h1, h2, h3 {
+    width: 100%;
+    text-align: center;
 }

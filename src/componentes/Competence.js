@@ -4,7 +4,7 @@ export default function Competence() {
 
     const allCompetence = [
         ['Développement Web', "Développement de sites et d'applications web pour desktop tablette et mobile", "fas fa-desktop"],
-        ['Web Animation', 'Animation des page en CSS et JavaScript', 'far fa-eye'],
+        ['Web Animation', 'Animation en CSS et JavaScript', 'far fa-eye'],
         ['E-Commerce', "Développement et refonte de site de E-Commerce", "fas fa-shopping-cart"]
     ]
 
@@ -23,7 +23,7 @@ export default function Competence() {
             </div>
     )
     return (
-        <div id='competence'>
+        <div id='competence-contenu'>
             <div className='categorie-title'>
                 <h1>
                     <i className='fas fa-brain' />
