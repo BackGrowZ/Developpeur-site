@@ -19,18 +19,21 @@
 
 #cv-desc {
     padding: 1rem;
-    flex-basis: 50%;
+    width: 50%;
+    flex-wrap: wrap;
 }
 
 #cv-parcours {
     margin: 5rem 0;
     display: flex;
     justify-content: space-around;
+    min-width: 350px;
 }
 
 #cv-experience, #cv-formation {
-    background-color: springgreen;
+    /* background-color: springgreen; */
     flex-basis: 50%;
+    min-width: 350px;
 }
 
 .cercle-img {
@@ -57,5 +60,19 @@
 
 #langage, #framework, #bdd {
     display: flex;
-    width: 33%;
+    flex-direction: column;
+    flex-basis: 33%;
+    min-width: 350px;
+}
+.container-formation{
+    margin-bottom: 1rem;
+    padding: .5rem;
+}
+
+.detail-activite{
+    cursor: help;
+}
+.detail {
+    overflow: hidden;
+    transition: max-height linear 1.25s
 }

@@ -1,18 +1,34 @@
-// import React, { useState, useEffect } from 'react'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ScrollIntoView from 'react-scroll-into-view'
 
 export default function Navbar() {
-    // const defaultStyleNavbar = {backgroundColor:'transparent'}
-    const customStyleNavbar = { backgroundColor: '#fff', height: '1rem' }
-    // const scrollY = window.screenY
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         document.title = scrollY
-    //     }, ); 
-    // }, [scrollY])
-    // if (height)
-    // const [styleNavbar, setstyleNavbar] = useState('transparent')
+    const customStyleNavbar = { backgroundColor: '#fff', padding:'1.5rem 0', borderBottom: 'solid 1px #ddd' }
+    const customStyleItem = { color: '#333', textShadow:'none' }
+    const [navStyle, setNavStyle] = useState(null);
+    const [itemStyle, setItemStyle] = useState(null);
+    const [scrollPosition, setSrollPosition] = useState(0);
+    const animation = {'navBar':50}
+
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setSrollPosition(position);
+        if (position > animation['navBar'] && scrollPosition <= animation['navBar']) {
+            setNavStyle(customStyleNavbar)
+            setItemStyle(customStyleItem)
+        } else if (position < animation['navBar'] && scrollPosition >= animation['navBar']) {
+            setNavStyle(null)
+            setItemStyle(null)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [scrollPosition,itemStyle])
+
     const navbarElement = [
         ['brain', 'Compétence', '#competence'],
         ['file', 'CV', '#cv'],
@@ -20,7 +36,7 @@ export default function Navbar() {
         ['handshake', 'Contact', '#link']
     ]
     const navbar = navbarElement.map((value, key) =>
-        <div key={`container-${key}`} className='Navbar-items' onClick={() => console.log(document.getElementById(value[2]))}>
+        <div key={`container-${key}`} className='Navbar-items' style={itemStyle} onClick={() => console.log(document.getElementById(value[2]))}>
             <ScrollIntoView selector={value[2]}>
                 <i key={`icon-${key}`} className={`fas fa-${value[0]}`} />
                 <span key={`label-${key}`}>{value[1]}</span>
@@ -28,7 +44,7 @@ export default function Navbar() {
         </div>
     )
     return (
-        <div id='Navbar' style={customStyleNavbar}>
+        <div id='Navbar' style={navStyle}>
             {navbar}
         </div>
     )
