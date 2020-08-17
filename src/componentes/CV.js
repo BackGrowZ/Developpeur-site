@@ -105,7 +105,7 @@ export default function CV() {
     const template =
         <div id='container-cv'>
             <div className='categorie-title'>
-                <h1><i className='fas fa-file' />Curriculum Vitae</h1>
+                <h1><i className='fas fa-file' />  Curriculum Vitae</h1>
             </div>
             <div>
                 <div id='cv-presentation'>

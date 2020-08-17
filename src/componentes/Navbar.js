@@ -22,21 +22,21 @@ export default function Navbar() {
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    }, [scrollPosition,itemStyle])
+    })
 
     const navbarElement = [
         ['brain', 'Compétence', '#competence'],
         ['file', 'CV', '#cv'],
-        ['code', 'Portfolio', '#link'],
+        ['code', 'Portfolio', '#portfolio'],
         ['handshake', 'Contact', '#link']
     ]
     const navbar = navbarElement.map((value, key) =>
-        <div key={`container-${key}`} className='Navbar-items' style={itemStyle} onClick={() => console.log(document.getElementById(value[2]))}>
+        <div key={`container-${key}`} className='Navbar-items' style={itemStyle}>
             <ScrollIntoView selector={value[2]}>
                 <i key={`icon-${key}`} className={`fas fa-${value[0]}`} />
                 <span key={`label-${key}`}>{value[1]}</span>

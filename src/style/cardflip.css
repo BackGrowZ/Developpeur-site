@@ -1,0 +1,66 @@
+.cardflip {
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    perspective: 500px;
+}
+
+.img-card {
+    border-radius: 20px;
+    max-height: 300px;
+    width: auto;
+}
+
+.cardflip .content {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transition: transform 1s;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+
+.cardflip:hover .content {
+    transform: rotateY( 180deg);
+    transition: transform 0.5s;
+}
+
+.frontcard, .backcard {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #eee;
+    color: #03446A;
+    border-radius: 20px;
+    backface-visibility: hidden;
+}
+
+.backcard {
+    padding: 1rem;
+    background: #03446A;
+    color: #eee;
+    transform: rotateY( 180deg);
+}
+
+.title-project {
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 2rem;
+}
+
+.footerCard {
+    border-radius: 5px;
+    position: absolute;
+    bottom: 15px;
+    padding: .5rem;
+    text-align: center;
+    border: 1px #eee solid;
+    margin: 0 10%;
+    width: 70%;
+    cursor: pointer;
+}
+
+.footerCard:hover {
+    border: 3px #eee solid;
+    font-weight: bolder;
+}

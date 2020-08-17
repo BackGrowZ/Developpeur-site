@@ -5,6 +5,7 @@ import Header from './componentes/Header';
 import Competence from './componentes/Competence';
 import BackImage from './componentes/BackImage';
 import CV from './componentes/CV';
+import Portfolio from './componentes/Portfolio';
 
 function useWindowSize() {
   const [size, setSize] = useState([0, 0]);
@@ -36,6 +37,9 @@ function App() {
       </section>
       <section id='cv'>
         <CV />
+      </section>
+      <section id='portfolio'>
+        <Portfolio />
       </section>
     </>
   );

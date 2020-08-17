@@ -26,8 +26,7 @@ export default function Competence() {
         <div id='competence-contenu'>
             <div className='categorie-title'>
                 <h1>
-                    <i className='fas fa-brain' />
-                    Compétence
+                    <i className='fas fa-brain' /> Compétence
                 </h1>
             </div>
             <div id='competence-liste'>
