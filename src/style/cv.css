@@ -31,7 +31,6 @@
 }
 
 #cv-experience, #cv-formation {
-    /* background-color: springgreen; */
     flex-basis: 50%;
     min-width: 350px;
 }
@@ -58,21 +57,45 @@
     justify-content: space-around;
 }
 
-#langage, #framework, #bdd {
+#langages, #frameworks, #bdd {
     display: flex;
     flex-direction: column;
     flex-basis: 33%;
     min-width: 350px;
 }
-.container-formation{
+
+.container-formation {
     margin-bottom: 1rem;
     padding: .5rem;
 }
 
-.detail-activite{
-    cursor: help;
-}
 .detail {
+    max-height: 0px;
     overflow: hidden;
     transition: max-height linear 1.25s
+}
+
+.detail-experience {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.color-bleu {
+    color: #1a398b
+}
+
+.container-progressbar {
+    width: 70%;
+}
+
+.container-detail {
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+}
+
+.name-skill {
+    min-width: 100px;
+    width: 20%;
+    margin-right: .5rem;
 }

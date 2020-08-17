@@ -1,7 +1,7 @@
 import React from 'react'
 import Moi from '../img/Anthony_Carreta.jpg'
 import ProgressBar from './ProgressBar'
-
+import CursorHelp from '../img/help.png'
 
 function ChangeDetail(id, declancheur) {
     const detail = (id) => document.getElementById(`detail-${id}`).style.maxHeight
@@ -15,6 +15,7 @@ function ChangeDetail(id, declancheur) {
 }
 
 export default function CV() {
+    const cursorHelpStyle = { cursor: `url(${CursorHelp}), help` }
     const texteDescription = "L'esprit libre, je me suis majoritairement formé en autodidacte. La curiosité et la compréhension des systèmes de développement des nouvelles génération m'intrigue et me passionne. J'ai approfondie mes compétences en développement en suivant un programme d'accompagnement. Par ailleurs, l'hypnose m'a apporté des valeurs au quotidien. Ces deux univers me permettent de m'adapter à tout type de mission. La communication est une chose essentielle pour moi, car elle permet d'élever en maturité les projets dans lesquels je m’implique."
     const texteDescriptionMisEnPage = texteDescription.split('.').map((value, key) => <p key={key}>{value}.</p>)
     const photo = <div id='cv-photo'> <img className='cercle-img' alt='Anthony Carreta' src={Moi} /> </div>
@@ -45,14 +46,14 @@ export default function CV() {
             ['Employer Polyvalent', 'CDI', "McDonald's", 'Mars 2014', 'Novembre 2014', null],
             ['Technicien Téléphonie', "CDD", 'Point Service Mobile', 'Juillet 2013', 'Octobre 2013', ["Accueil client", "Réparation des produits mobiles (Toutes gammes)", "Reprogrammation logiciel mobile", "Gestion de stock"]],
         ]
-    const langage = [['HTML5', 90], ['CSS3', 90], ['JavaScript', 80], ['PHP', 20]]
+    const langages = [['HTML5', 90], ['CSS3', 90], ['JavaScript', 80], ['PHP', 20]]
     const frameworks = [['ReactJS', 90], ['Redux', 90], ['Sass', 90], ['Bootstrap', 80], ['Material-ui', 70], ['Wordpress', 60], ['Laravel', 20], ['Ruby On Rails', 20]]
     const bdd = [['Firebase', 85], ['PhpMyAdmin', 75], ['MySQL', 60], ['SQLLite', 50], ['PostgreSQL', 30]]
 
     const formationFormated =
         formation.map((value, key) =>
             <div className='container-formation' key={key}>
-                <p style={{ color: '#1a398b' }}><b >{value[0]}</b> - {value[1]} </p>
+                <p className='color-bleu'><b >{value[0]}</b> - {value[1]} </p>
                 <p>{value[2]} {(value[3]) ? `à ${value[3]}` : null} </p>
                 <i>{value[4]}</i>
             </div>
@@ -62,29 +63,49 @@ export default function CV() {
     const experienceFormated =
         experience.map((value, key) =>
             (value[5]) ?
-                <div className='container-formation detail-activite' key={key} onMouseLeave={() => ChangeDetail(key)} onClick={() => ChangeDetail(key, 'click')}>
-                    <p style={{ color: '#1a398b' }}><b>{value[2]}</b> - {value[1]}</p>
+                <div className='container-formation' style={cursorHelpStyle} key={key} onMouseLeave={() => ChangeDetail(key)} onClick={() => ChangeDetail(key, 'click')}>
+                    <p className='color-bleu'><b>{value[2]}</b> - {value[1]}</p>
                     <p>{value[0]} | {value[3]} à  {(value[4]) ? value[4] : 'maintenant'} </p>
-                    <div id={`detail-${key}`} className='detail' style={{ maxHeight: '0px' }}>
+                    <div id={`detail-${key}`} className='detail'>
                         {value[5].map((valueList, key) =>
-                            <li style={{ listStyleType: 'none', paddingLeft: '1rem' }} key={key}> - {valueList}</li>
+                            <li className='detail-experience' key={key}> - {valueList}</li>
                         )}
                     </div>
                 </div>
                 :
                 <div className='container-formation' key={key}>
-                    <p style={{ color: '#1a398b' }}><b>{value[2]}</b> - {value[1]}</p>
+                    <p className='color-bleu'><b>{value[2]}</b> - {value[1]}</p>
                     <p>{value[0]} | {value[3]} à  {(value[4]) ? value[4] : 'maintenant'} </p>
                 </div>
         )
 
-    return (
+    const skill = (name, key, pourcentage) => (
+        <div key={key} className='container-detail'>
+            <div className='name-skill'>{name}</div>
+            <div className='container-progressbar'><ProgressBar pourcentage={pourcentage} /></div>
+        </div>
+    )
+
+
+    const createSkill = (id, name, array) =>
+        <div id={id}>
+            <h3>{name}</h3>
+            {array.map((value, key) => skill(value[0], key, value[1]))}
+        </div>
+
+    const detail =
+        <div id='detail-competence'>
+            <h2>Detail des competences</h2>
+            {createSkill('langages', 'Langages', langages)}
+            {createSkill('frameworks', 'Frameworks', frameworks)}
+            {createSkill('bdd', 'Base de Données', bdd)}
+        </div>
+
+
+    const template =
         <div id='container-cv'>
             <div className='categorie-title'>
-                <h1>
-                    <i className='fas fa-file' />
-                    Curriculum Vitae
-                </h1>
+                <h1><i className='fas fa-file' />Curriculum Vitae</h1>
             </div>
             <div>
                 <div id='cv-presentation'>
@@ -101,37 +122,13 @@ export default function CV() {
                         {experienceFormated}
                     </div>
                 </div>
-                <div id='detail-competence'>
-                    <h2>Detail des competences</h2>
-                    <div id='langage'>
-                        <h3>Langages</h3>
-                        {langage.map((value, key) =>
-                            <div key={key} style={{ display: 'flex', justifyContent: 'center', marginBottom: '.5rem' }}>
-                                <div style={{ minWidth: '20px', width: '20%', marginRight: '1rem' }}>{value[0]}</div>
-                                <div style={{ width: '70%' }}><ProgressBar pourcentage={value[1]} /></div>
-                            </div>
-                        )}
-                    </div>
-                    <div id='framework'>
-                        <h3>Frameworks</h3>
-                        {frameworks.map((value, key) =>
-                            <div key={key} style={{ display: 'flex', justifyContent: 'center', marginBottom: '.5rem' }}>
-                                <div style={{ minWidth: '100px', width: '20%', marginRight: '1rem' }}>{value[0]}</div>
-                                <div style={{ width: '70%' }}><ProgressBar pourcentage={value[1]} /></div>
-                            </div>
-                        )}
-                    </div>
-                    <div id='bdd'>
-                        <h3>Base de données</h3>
-                        {bdd.map((value, key) =>
-                            <div key={key} style={{ display: 'flex', justifyContent: 'center', marginBottom: '.5rem' }}>
-                                <div style={{ minWidth: '100px', width: '20%', marginRight: '1rem' }}>{value[0]}</div>
-                                <div style={{ width: '70%' }}><ProgressBar pourcentage={value[1]} /></div>
-                            </div>
-                        )}
-                    </div>
-                </div>
+                {detail}
             </div>
         </div>
+
+
+
+    return (
+        template
     )
 }
