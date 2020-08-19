@@ -17,7 +17,7 @@ function ChangeDetail(id, declancheur) {
 export default function CV() {
     const cursorHelpStyle = { cursor: `url(${CursorHelp}), help` }
     const texteDescription = "L'esprit libre, je me suis majoritairement formé en autodidacte. La curiosité et la compréhension des systèmes de développement des nouvelles génération m'intrigue et me passionne. J'ai approfondie mes compétences en développement en suivant un programme d'accompagnement. Par ailleurs, l'hypnose m'a apporté des valeurs au quotidien. Ces deux univers me permettent de m'adapter à tout type de mission. La communication est une chose essentielle pour moi, car elle permet d'élever en maturité les projets dans lesquels je m’implique."
-    const texteDescriptionMisEnPage = texteDescription.split('.').map((value, key) => <p key={key}>{value}.</p>)
+    const texteDescriptionMisEnPage = texteDescription.split('.').map((value, key) => <p key={key}>{value}</p>)
     const photo = <div id='cv-photo'> <img className='cercle-img' alt='Anthony Carreta' src={Moi} /> </div>
     const description =
         <div id='cv-desc'>
@@ -63,9 +63,9 @@ export default function CV() {
     const experienceFormated =
         experience.map((value, key) =>
             (value[5]) ?
-                <div className='container-formation' style={cursorHelpStyle} key={key} onMouseLeave={() => ChangeDetail(key)} onClick={() => ChangeDetail(key, 'click')}>
+                <div className='container-formation' key={key} onMouseLeave={() => ChangeDetail(key)} onClick={() => ChangeDetail(key, 'click')}>
                     <p className='color-bleu'><b>{value[2]}</b> - {value[1]}</p>
-                    <p>{value[0]} | {value[3]} à  {(value[4]) ? value[4] : 'maintenant'} </p>
+                    <p style={cursorHelpStyle} className='show-detail'>{value[0]} | {value[3]} à  {(value[4]) ? value[4] : 'maintenant'} </p>
                     <div id={`detail-${key}`} className='detail'>
                         {value[5].map((valueList, key) =>
                             <li className='detail-experience' key={key}> - {valueList}</li>

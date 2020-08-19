@@ -1,10 +1,11 @@
 import React from 'react'
 
 export default function CardFlip(props) {
-    const { visuel, title, link, techno } = props
+    const { visuel, title, link, techno, description } = props
 
     const front =
         <div className='frontcard'>
+            <i className='fas fa-arrow-circle-right fa-2x help' />
             <img src={visuel} className='img-card' alt={title} />
         </div>
 
@@ -14,9 +15,20 @@ export default function CardFlip(props) {
                 <h2>{title}</h2>
             </div>
 
+            <div className='desc-project'>
+                <p>{description}</p>
+            </div>
+
             <div className='techno-project'>
-                <h4>Liste des techno utilisé: </h4>
-                {techno.map((value, key) => <p key={`${key}`}>{value}</p>)}
+                {
+                    (techno) ?
+                        <>
+                            <h4>Liste des techno utilisé: </h4>
+                            <p>{techno.map(value => value + ' ')}</p>
+                        </>
+                        :
+                        null
+                }
             </div>
             {
                 (link) ?

@@ -8,7 +8,9 @@
 .img-card {
     border-radius: 20px;
     max-height: 300px;
+    /* max-width: 300px; */
     width: auto;
+    height: auto;
 }
 
 .cardflip .content {
@@ -25,7 +27,13 @@
     transition: transform 0.5s;
 }
 
+.frontcard {
+    display: flex;
+    justify-content: center;
+}
+
 .frontcard, .backcard {
+    overflow: hidden;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -63,4 +71,11 @@
 .footerCard:hover {
     border: 3px #eee solid;
     font-weight: bolder;
+}
+
+.help {
+    position: absolute;
+    color: #069df4b3;
+    bottom: 50%;
+    right: 1%;
 }

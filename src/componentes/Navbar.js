@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import ScrollIntoView from 'react-scroll-into-view'
+import Logo from '../img/logo.png'
 
 export default function Navbar() {
-    const customStyleNavbar = { backgroundColor: '#fff', padding:'1.5rem 0', borderBottom: 'solid 1px #ddd' }
-    const customStyleItem = { color: '#333', textShadow:'none' }
+    const customStyleNavbar = { backgroundColor: '#fff', padding: '1.5rem 0', borderBottom: 'solid 1px #ddd' }
+    const customStyleItem = { color: '#333', textShadow: 'none' }
     const [navStyle, setNavStyle] = useState(null);
     const [itemStyle, setItemStyle] = useState(null);
     const [scrollPosition, setSrollPosition] = useState(0);
-    const animation = {'navBar':50}
+    const animation = { 'navBar': 50 }
 
     const handleScroll = () => {
         const position = window.pageYOffset;
@@ -45,6 +46,17 @@ export default function Navbar() {
     )
     return (
         <div id='Navbar' style={navStyle}>
+            <div className='container' style={{textAlign:'left'}}>
+                <div className='logo' style={{margin:'0 1rem'}}>
+                    <div className='backLogo2-min' />
+                    <div className='backLogo-min' />
+                    <img src={Logo} style={{padding:'1rem .5rem'}} height='50px' alt='logo' />
+                </div>
+                <div style={{marginTop:'1rem'}}>
+                    <h6 id='prenom'>Anthony</h6>
+                    <h6 id='nom'>Carreta</h6>
+                </div>
+            </div>
             {navbar}
         </div>
     )
