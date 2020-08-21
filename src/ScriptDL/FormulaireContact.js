@@ -10,9 +10,10 @@ export default function FormulaireContact() {
 
     const MiseEnPage = (string) => (encodeURIComponent(string).replace(/%0A/g, '%0D%0A'))
 
-    const signature = '%0A' + prenom + '%0D' + nom + '%0A' + email
+    const signature = '%0A' + prenom + ' ' + nom + '%0A' + email
 
     const reset = () => {
+
         setNom('')
         setPrenom('')
         setEmail('')
@@ -59,7 +60,7 @@ export default function FormulaireContact() {
             </div>
             <div id="console" className="cf-row">
                 <div className="cf-container">
-                    <form method='POST' encType="text/plain" action={`mailto:anthony.carreta@gmail.com?subject=${MiseEnPage(sujet)}&body=${MiseEnPage(message)}%0A${signature}`}>
+                    <form>
                         <div className="cf-line-row">
                             <label>prenom</label>
                             <input id="cf-prenom" onChange={UpdateState} type="text" className="focus" placeholder="Votre prénom" value={prenom} />
@@ -82,7 +83,7 @@ export default function FormulaireContact() {
                         </div>
                         <div className="cf-line-row" id="submit-row">
                             <div className="label" id="submit-label">envoyer</div>
-                            <button id="cf-submit-button" className="cf-button" onClick={() => setTimeout(() => { reset() }, 10000)}>[Envoyer]</button>
+                            <div id="cf-submit-button" onClick={() => setTimeout(() => { reset() }, 2000)} className="cf-button"><a style={{ textDecoration: 'none', color: 'inherit' }} target="_blank" rel="noopener noreferrer" href={`mailto:anthony.carreta@gmail.com?subject=${MiseEnPage(sujet)}&body=${MiseEnPage(message)}%0A${signature}`}>[Envoyer]</a></div>
                         </div>
                     </form>
                 </div>
