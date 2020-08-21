@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function CardFlip(props) {
-    const { visuel, title, link, techno, description, taille } = props
+    const { visuel, title, link, techno, description, taille, margin } = props
 
     const front =
         <div className='frontcard'>
@@ -39,7 +39,7 @@ export default function CardFlip(props) {
         </div>
 
     const template =
-        <div className="cardflip" style={{height:taille, width:taille}}>
+        <div className="cardflip" style={{margin, height:taille, width:taille}}>
             <div className='content'>
                 {front}
                 {back}
