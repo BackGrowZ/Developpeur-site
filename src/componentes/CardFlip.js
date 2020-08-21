@@ -1,12 +1,12 @@
 import React from 'react'
 
 export default function CardFlip(props) {
-    const { visuel, title, link, techno, description } = props
+    const { visuel, title, link, techno, description, taille } = props
 
     const front =
         <div className='frontcard'>
-            <i className='fas fa-arrow-circle-right fa-2x help' />
-            <img src={visuel} className='img-card' alt={title} />
+            {/* <i className='fas fa-arrow-circle-right fa-2x help' /> */}
+            <img src={visuel} style={{maxHeight:taille}} className='img-card' alt={title} />
         </div>
 
     const back =
@@ -32,14 +32,14 @@ export default function CardFlip(props) {
             </div>
             {
                 (link) ?
-                    <div className='footerCard' onClick={() => window.open(link)}>Visité le site</div>
+                    null//<div className='footerCard' onClick={() => window.open(link)}>Visité le site</div>
                     :
                     null
             }
         </div>
 
     const template =
-        <div className="cardflip">
+        <div className="cardflip" style={{height:taille, width:taille}}>
             <div className='content'>
                 {front}
                 {back}

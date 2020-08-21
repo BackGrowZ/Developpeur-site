@@ -10,9 +10,9 @@ export default function Header() {
                         <div className='logo'>
                             <div className='backLogo2 rotate2' />
                             <div className='backLogo rotate' />
-                            <img src={Logo} height='180px' alt='logo' />
+                            <img src={Logo} height='180px' style={{marginLeft:'.5rem'}} alt='logo' />
                         </div>
-                        <div>
+                        <div style={{marginLeft:'1.5rem'}}>
                             <h1 id='prenom'>Anthony</h1>
                             <h1 id='nom'>Carreta</h1>
                         </div>

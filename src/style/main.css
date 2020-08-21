@@ -7,7 +7,7 @@
     background-color: #eee;
 }
 
-#cv {
+#cv, #contact {
     display: flex;
     background-color: #fff;
 }

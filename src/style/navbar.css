@@ -4,10 +4,15 @@
     padding: 3rem 0;
     height: 1rem;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: space-between;
     z-index: 9;
     transition: padding 1s;
+}
+
+.link-navbar{
+    display: flex;
+
 }
 
 .Navbar-items {
@@ -29,4 +34,8 @@
 .Navbar-items :hover {
     color: #4073ff;
     font-size: 1.25rem;
+}
+
+#logoTop {
+    cursor: pointer;
 }

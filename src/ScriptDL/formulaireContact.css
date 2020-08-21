@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,600,700');
+
+ .console-form {
+	 background-color: rgba(28,31,37,0.93);
+	 width: 65%;
+	 position: relative;
+	 max-height: 500px;
+	 margin: 64px auto;
+	 border-radius: 6px;
+	 overflow: hidden;
+	 box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+	 line-height: 1em;
+	 display: block;
+}
+ .console-form #taskbar {
+	 background-color: #191919;
+	 padding: 8px 12px;
+	 text-align: center;
+	 border-top-right-radius: inherit;
+	 border-top-left-radius: inherit;
+	 box-shadow: 0 6px rgba(0,0,0,0.05);
+	 color: #eeeeee;
+}
+ .console-form #taskbar #title {
+	 text-align: center;
+	 display: inline-block;
+	 margin: 0 0;
+}
+ .console-form #taskbar .buttons {
+	 list-style-type: none;
+	 display: inline-block;
+	 position: relative;
+	 float: left;
+	 left: 0;
+	 top: 0;
+	 margin: 0;
+	 padding: 0;
+}
+ .console-form #taskbar .buttons .button {
+	 display: inline-block;
+	 width: 13px;
+	 height: 13px;
+	 border-radius: 16px;
+	 padding: 0;
+	 margin: 0 2px;
+	 background-color: red;
+	 box-shadow: 0 3px rgba(0,0,0,0.1);
+}
+ .console-form #taskbar .buttons .button#red {
+	 background-color: #ff514e;
+}
+ .console-form #taskbar .buttons .button#green {
+	 background-color: #43A047;
+}
+ .console-form #taskbar .buttons .button#yellow {
+	 background-color: #d0b84f;
+}
+ .console-form #taskbar #buttons2 {
+	 float: right;
+	 visibility: hidden;
+}
+ .console-form #console {
+	 padding: 16px;
+	 overflow-y: scroll;
+	 height: 95%;
+	 position: relative;
+}
+ .console-form #console .cf-container {
+	 padding-bottom: 64px;
+}
+ .console-form #console form {
+	 width: 100%;
+	 position: relative;
+}
+ .console-form #console .cf-line-row {
+	 display: block;
+	 width: 100%;
+	 height: auto;
+	 padding: 3px 0;
+	 position: relative;
+	 font-size: 1.5em;
+	 color: #cccccc;
+	 font-family: 'Source Code Pro';
+	 display: flex;
+}
+ @media screen and (min-width: 0) and (max-width: 550px) {
+	 .console-form #console .cf-line-row {
+		 flex-direction: column;
+	}
+}
+ .console-form #console .cf-line-row label, .console-form #console .cf-line-row .label {
+	 position: relative;
+	 top: 0;
+	 color: #5f98b4;
+	 margin-top: 0.5em;
+	 margin-bottom: 0 !important;
+	 text-align: left;
+}
+ .console-form #console .cf-line-row label::before, .console-form #console .cf-line-row .label::before {
+	 content: '$';
+}
+ .console-form #console .cf-line-row label:after, .console-form #console .cf-line-row .label:after {
+	 content: '> ';
+}
+ @media screen and (min-width: 0) and (max-width: 550px) {
+	 .console-form #console .cf-line-row label, .console-form #console .cf-line-row .label {
+		 width: 100%;
+	}
+}
+ .console-form #console .cf-line-row input[type="text"], .console-form #console .cf-line-row input[type="email"], .console-form #console .cf-line-row input[type="password"], .console-form #console .cf-line-row textarea {
+	 background-color: transparent;
+	 border: none;
+	 padding: 3px 6px;
+	 color: white;
+	 font-family: inherit;
+	 flex-grow: 1;
+}
+ .console-form #console .cf-line-row input[type="text"]:focus, .console-form #console .cf-line-row input[type="text"]:active, .console-form #console .cf-line-row input[type="text"]:hover, .console-form #console .cf-line-row input[type="email"]:focus, .console-form #console .cf-line-row input[type="email"]:active, .console-form #console .cf-line-row input[type="email"]:hover, .console-form #console .cf-line-row input[type="password"]:focus, .console-form #console .cf-line-row input[type="password"]:active, .console-form #console .cf-line-row input[type="password"]:hover, .console-form #console .cf-line-row textarea:focus, .console-form #console .cf-line-row textarea:active, .console-form #console .cf-line-row textarea:hover {
+	 background-color: rgba(255,255,255,0.025);
+	 box-shadow: none;
+	 outline: none;
+}
+ .console-form #console .cf-line-row input[type="text"]::selection, .console-form #console .cf-line-row input[type="email"]::selection, .console-form #console .cf-line-row input[type="password"]::selection, .console-form #console .cf-line-row textarea::selection {
+	 background-color: white;
+	 color: #1c1f25;
+}
+ .console-form #console .cf-line-row textarea {
+	 position: relative;
+	 top: 0;
+	 resize: vertical;
+	 flex-grow: 2;
+	 width: 100%;
+	 padding-top: 0.5em;
+}
+ .console-form #console .cf-line-row .cf-col {
+	 display: inline-block;
+	 position: relative;
+}
+ .console-form #console .cf-line-row .cf-col#text-col {
+	 border-left: 2px dashed #3a3a3a;
+	 margin-left: 4px;
+	 flex-grow: 1;
+}
+ .console-form #console .cf-line-row .cf-col label {
+	 position: relative;
+	 top: 0;
+}
+ .console-form #console .cf-line-row#message-row {
+	 margin-top: 5px;
+}
+ .console-form #console .cf-line-row#submit-row {
+	 text-align: left !important;
+}
+ .console-form #console .cf-line-row#submit-row #submit-label {
+	 display: inline-block;
+}
+ .console-form #console .cf-line-row#submit-row .cf-button {
+	 font-family: 'Source Code Pro';
+	 color: #cccccc;
+	 background-color: transparent;
+	 border: none;
+}
+ .console-form #console .cf-line-row#submit-row .cf-button:hover {
+	 cursor: pointer;
+}
+ .console-form #console .cf-line-row#submit-row .cf-button:focus, .console-form #console .cf-line-row#submit-row .cf-button:hover {
+	 background-color: white;
+	 color: #1c1f25;
+	 border: none;
+	 box-shadow: none;
+	 outline: none;
+}
+ .console-form #console .output-label {
+	 position: relative;
+	 top: 0;
+}
+ .console-form #console .output-label::before {
+	 content: '$';
+}
+ .console-form #console .output-label:after {
+	 content: '> ';
+}
+ .console-form #console .output-text {
+	 position: relative;
+	 top: 0.5em;
+	 margin-left: 12px;
+}
+ .console-form #console .output-line {
+	 display: block;
+	 width: 100%;
+	 height: auto;
+	 padding: 3px 0;
+	 margin: 16px 0;
+	 position: relative;
+	 font-size: 1.5em;
+	 font-family: 'Source Code Pro';
+	 display: flex;
+	 text-align: left;
+}
+ .console-form #console .output-line.output-error {
+	 color: #ff514e;
+}
+ .console-form #console .output-line.output-error .output-text, .console-form #console .output-line.output-error .output-label {
+	 color: #ff514e;
+}
+ .console-form #console .output-line.output-success {
+	 color: #43A047;
+}
+ .console-form #console .output-line.output-success div {
+	 color: #43A047;
+}
+ .console-form #console .output-line.output-info {
+	 color: #cccccc;
+}
+ .console-form #console .output-line.output-info div {
+	 color: #cccccc;
+}
+ .console-form #console .cf-button {
+	 font-family: 'Source Code Pro';
+	 color: #cccccc;
+	 background-color: transparent;
+	 border: none;
+	 margin-top: 0.5em;
+}
+ .console-form #console .cf-button:hover {
+	 cursor: pointer;
+}
+ .console-form #console .cf-button:focus, .console-form #console .cf-button:hover {
+	 background-color: white;
+	 color: #1c1f25;
+	 border: none;
+	 box-shadow: none;
+	 outline: none;
+}
+ .console-form ::-webkit-scrollbar {
+	 width: 10px;
+}
+ .console-form ::-webkit-scrollbar-track {
+	 background: #2e323c;
+}
+ .console-form ::-webkit-scrollbar-thumb {
+	 background: #535c6e;
+	 border-radius: 4px;
+}
+ .console-form ::-webkit-scrollbar-thumb:hover {
+	 background: #3f3f3f;
+}
+ 

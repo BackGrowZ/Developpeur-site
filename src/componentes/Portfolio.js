@@ -6,14 +6,12 @@ import Project from '../img/project.jpg'
 
 export default function Portfolio() {
 
-    const accroche = <><p>Vous avez un projet de site ou d'application web ?</p><p>Vous avez les idées, j'ai les connaissances. Ensemble nous avons les moyens !</p></>
+    const accroche = <>Vous avez un projet de site ou d'application web ?<br /><br />Vous avez les idées, j'ai les connaissances. Ensemble nous avons les moyens !</>
 
     const project =
         [
             ['EasyShop', 'Site de E-commerce', '#link', ['React.JS', 'Redux', 'Firebase'], Ecommerce],
             ['GreenFood', 'Site de recette végetarienne', '#link', ['React.JS', 'Redux', 'Firebase'], GreenFood],
-
-            // ['Votre Projet', 'Vous av', null, ['React.JS ?', 'Redux ?'], Project]
         ]
 
     const template =

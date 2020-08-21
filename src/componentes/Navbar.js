@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import ScrollIntoView from 'react-scroll-into-view'
-import Logo from '../img/logo.png'
+import Logo from '../img/header_logo.png'
 
 export default function Navbar() {
     const customStyleNavbar = { backgroundColor: '#fff', padding: '1.5rem 0', borderBottom: 'solid 1px #ddd' }
+    const logoTop = { margin: '0 1rem', visibility: 'visible' }
     const customStyleItem = { color: '#333', textShadow: 'none' }
     const [navStyle, setNavStyle] = useState(null);
     const [itemStyle, setItemStyle] = useState(null);
+    const [logoStyle, setLogoStyle] = useState({ visibility: 'hidden' });
     const [scrollPosition, setSrollPosition] = useState(0);
     const animation = { 'navBar': 50 }
 
@@ -16,9 +18,11 @@ export default function Navbar() {
         if (position > animation['navBar'] && scrollPosition <= animation['navBar']) {
             setNavStyle(customStyleNavbar)
             setItemStyle(customStyleItem)
+            setLogoStyle(logoTop)
         } else if (position < animation['navBar'] && scrollPosition >= animation['navBar']) {
             setNavStyle(null)
             setItemStyle(null)
+            setLogoStyle({ visibility: 'hidden' })
         }
     }
 
@@ -46,18 +50,14 @@ export default function Navbar() {
     )
     return (
         <div id='Navbar' style={navStyle}>
-            <div className='container' style={{textAlign:'left'}}>
-                <div className='logo' style={{margin:'0 1rem'}}>
-                    <div className='backLogo2-min' />
-                    <div className='backLogo-min' />
-                    <img src={Logo} style={{padding:'1rem .5rem'}} height='50px' alt='logo' />
-                </div>
-                <div style={{marginTop:'1rem'}}>
-                    <h6 id='prenom'>Anthony</h6>
-                    <h6 id='nom'>Carreta</h6>
-                </div>
+            <div id='logoTop' style={logoStyle}>
+                <ScrollIntoView selector='#header'>
+                    <img src={Logo} height='50px' alt='logo' />
+                </ScrollIntoView>
             </div>
-            {navbar}
+            <div className='link-navbar'>
+                {navbar}
+            </div>
         </div>
     )
 }

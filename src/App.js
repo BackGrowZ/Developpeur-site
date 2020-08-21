@@ -6,6 +6,7 @@ import Competence from './componentes/Competence';
 import BackImage from './componentes/BackImage';
 import CV from './componentes/CV';
 import Portfolio from './componentes/Portfolio';
+import Contact from './componentes/Contact';
 
 function useWindowSize() {
   const [size, setSize] = useState([0, 0]);
@@ -29,10 +30,10 @@ function App() {
       <div className="App">
         <Navbar height={height} />
       </div>
-      <header>
+      <header style={{height:height}}>
         <Header />
       </header>
-      <section id='competence' style={{ marginTop: height }}>
+      <section id='competence'>
         <Competence />
       </section>
       <section id='cv'>
@@ -40,6 +41,9 @@ function App() {
       </section>
       <section id='portfolio'>
         <Portfolio />
+      </section>
+      <section id="contact">
+          <Contact />
       </section>
     </>
   );

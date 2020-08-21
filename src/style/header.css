@@ -81,53 +81,8 @@
     transform: rotate(135deg);
 }
 
-
-
-.backLogo-min {
-    background-color: #1a398b;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    text-align: center;
-    top: 10px;
-    transform: rotate(20deg);
-    z-index: -1;
-}
-
-.backLogo-min:before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 50px;
-    background-color: #1a398b;
-    transform: rotate(135deg);
-}
-
-.backLogo2-min {
-    background-color: #2a5add;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    text-align: center;
-    top: 10px;
-    z-index: -1;
-}
-
-.backLogo2-min:before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 50px;
-    background-color: #2a5add;
-    transform: rotate(135deg);
-}
-
 .rotate {
-    animation: rotation 10s infinite linear;
+    animation: rotation 30s infinite linear;
 }
 
 @keyframes rotation {
@@ -140,7 +95,7 @@
 }
 
 .rotate2 {
-    animation: rotation2 10s infinite linear;
+    animation: rotation2 30s infinite linear;
 }
 
 @keyframes rotation2 {
