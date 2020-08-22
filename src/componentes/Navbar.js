@@ -38,7 +38,7 @@ export default function Navbar() {
         ['brain', 'Compétence', '#competence'],
         ['file', 'CV', '#cv'],
         ['code', 'Portfolio', '#portfolio'],
-        ['handshake', 'Contact', '#link']
+        ['handshake', 'Contact', '#contact']
     ]
     const navbar = navbarElement.map((value, key) =>
         <div key={`container-${key}`} className='Navbar-items' style={itemStyle}>

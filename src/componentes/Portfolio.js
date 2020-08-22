@@ -19,7 +19,7 @@ export default function Portfolio() {
             <div className='categorie-title'>
                 <h1><i className='fas fa-code' /> Portfolio</h1>
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '80%', margin: '0 auto' }}>
+            <div id='all-project'>
                 {project.map((value, key) =>
                     <CardFlip key={key} title={value[0]} description={value[1]} link={value[2]} techno={value[3]} visuel={value[4]} />
                 )}

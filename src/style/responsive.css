@@ -1,0 +1,8 @@
+@media (max-width: 900px) {
+    #container-btn-cv {
+        flex-wrap: wrap;
+    }
+    #detail-competence, #all-project {
+        justify-content: center;
+    }
+}

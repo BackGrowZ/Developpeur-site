@@ -23,8 +23,9 @@ export default function CV() {
         <div id='cv-desc'>
             <h2>A Propos</h2>
             {texteDescriptionMisEnPage}
-            <div id='download'>
-                <span><i className='fas fa-file' />Telecharger mon CV (PDF) </span>
+            <div id='container-btn-cv'>
+                <div className='download'><i className='fas fa-file' /><a href="/DL/CV-anthony-carreta.pdf" download>Telecharger mon CV (PDF)</a></div>
+                <div className='download'><i className='fas fa-file' /><a href="/DL/CV-anthony-carreta.odt" download>Telecharger mon CV (ODT)</a></div>
             </div>
         </div>
 

@@ -41,13 +41,18 @@
     max-height: 500px;
 }
 
-#download {
-    margin-top: 5rem;
+.download {
+    margin: .5rem;
     padding: 1rem;
     text-align: center;
     border: #1a398b solid 3px;
-    width: auto;
+    width: 100%;
     cursor: pointer;
+}
+
+.download a {
+    text-decoration: none;
+    color: inherit;
 }
 
 #detail-competence {
@@ -104,4 +109,11 @@
 .show-detail {
     display: inline;
     text-decoration: underline #1a398b;
+}
+
+#container-btn-cv {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5rem
 }

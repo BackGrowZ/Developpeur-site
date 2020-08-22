@@ -13,7 +13,6 @@ export default function FormulaireContact() {
     const signature = '%0A' + prenom + ' ' + nom + '%0A' + email
 
     const reset = () => {
-
         setNom('')
         setPrenom('')
         setEmail('')
