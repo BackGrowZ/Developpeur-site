@@ -41,3 +41,22 @@
         margin: 0;
     }
 }
+
+@media (max-width: 749px) {
+    #all-contact {
+        width: 50%;
+        justify-content: center;
+    }
+    #maj {
+        top: 15%
+    }
+    #maj .container {
+        flex-wrap: wrap;
+    }
+    .competence-desc {
+        width: 100%;
+    }
+    .competence-liste-gauche, .competence-liste-droite {
+        text-align: center;
+    }
+}

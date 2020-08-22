@@ -13,13 +13,13 @@ export default function Competence() {
             <div key={`container-${key}`} className='competence-liste-droite'>
                 <i className={`${value[2]} fa-7x`} style={{ color: '#1a398b' }} />
                 <p className='competence-name' key={`name-${key}`}>{value[0]}</p>
-                <p style={{marginLeft:'auto', width:'50%'}} className='competence-desc' key={`label-${key}`}>{value[1]}</p>
+                <p style={{marginLeft:'auto'}} className='competence-desc' key={`label-${key}`}>{value[1]}</p>
             </div>
             :
             <div key={`container-${key}`} className='competence-liste-gauche'>
                 <i className={`${value[2]} fa-7x`} style={{ color: '#1a398b' }} />
                 <p className='competence-name' key={`name-${key}`}>{value[0]}</p>
-                <p style={{marginRight:'auto', width:'50%'}}  className='competence-desc' key={`label-${key}`}>{value[1]}</p>
+                <p style={{marginRight:'auto'}}  className='competence-desc' key={`label-${key}`}>{value[1]}</p>
             </div>
     )
     return (
