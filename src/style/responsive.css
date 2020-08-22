@@ -1,8 +1,43 @@
+@media (max-width: 1000px) {
+    #detail-competence, #all-project {
+        justify-content: center;
+    }
+    #all-contact {
+        justify-content: center;
+        width: 90%;
+    }
+}
+
 @media (max-width: 900px) {
     #container-btn-cv {
         flex-wrap: wrap;
     }
-    #detail-competence, #all-project {
+}
+
+@media (max-width: 750px) {
+    .contact-info {
+        margin: 1.5rem;
+    }
+    #all-contact {
+        justify-content: flex-start;
+        width: 83%;
+    }
+    #cv-parcours {
+        flex-wrap: wrap;
         justify-content: center;
+    }
+    #cv-experience {
+        margin-top: 5rem;
+    }
+    #cv-experience, #cv-formation {
+        flex-basis: 80%;
+    }
+    #cv-presentation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #cv-photo, #cv-desc {
+        width: 80%;
+        margin: 0;
     }
 }

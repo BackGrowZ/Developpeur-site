@@ -15,18 +15,11 @@ export default function Contact() {
             </div>
             <div>
                 <div id='all-contact'>
-                    <CardFlip title='Téléphone' description='06 58 93 04 21' taille='200px' margin='10px' link={null} techno={null} visuel={Tel} />
-                    <CardFlip title='Email' description='anthony.carreta@gmail.com' taille='200px' margin='10px' link={null} techno={null} visuel={Email} />
-                    <CardFlip title='Localisation' description={<>Lille<br />Nantes</>} taille='200px' margin='10px' link={null} techno={null} visuel={Localisation} />
+                    <CardFlip title='Téléphone' description='06 58 93 04 21' taille='200px' classOf='contact-info' margin='10px' link={null} techno={null} visuel={Tel} />
+                    <CardFlip title='Email' description='anthony.carreta@gmail.com' taille='200px' classOf='contact-info' margin='10px' link={null} techno={null} visuel={Email} />
+                    <CardFlip title='Localisation' description={<>Lille<br />Nantes</>} taille='200px' classOf='contact-info' margin='10px' link={null} techno={null} visuel={Localisation} />
                 </div>
                 <FormulaireContact />
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
             </div>
         </div>
     )
