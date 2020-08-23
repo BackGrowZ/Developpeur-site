@@ -4,9 +4,11 @@ import ProgressBar from './ProgressBar'
 import CursorHelp from '../img/help.png'
 
 function ChangeDetail(id, declancheur) {
+    console.log(id);
+    console.log(declancheur);
     const detail = (id) => document.getElementById(`detail-${id}`).style.maxHeight
 
-    if (detail(id) === '0px' && declancheur === 'click') {
+    if (detail(id) !== '200px' && declancheur === 'click') {
         document.getElementById(`detail-${id}`).style.maxHeight = '200px'
     } else {
         document.getElementById(`detail-${id}`).style.maxHeight = '0px'
