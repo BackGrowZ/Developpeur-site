@@ -49,6 +49,10 @@
     transform: rotateY( 180deg);
 }
 
+.desc-project {
+    overflow-wrap: break-word;
+}
+
 .title-project {
     text-align: center;
     font-size: larger;
