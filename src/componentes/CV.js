@@ -1,7 +1,7 @@
 import React from 'react'
-import Moi from '../img/Anthony_Carreta.jpg'
+import Moi from '../img/Anthony_Carreta.webp'
 import ProgressBar from './ProgressBar'
-import CursorHelp from '../img/help.png'
+import CursorHelp from '../img/help.webp'
 
 function ChangeDetail(id, declancheur) {
     console.log(id);

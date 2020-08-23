@@ -1,8 +1,8 @@
 import React from 'react'
 import CardFlip from './CardFlip'
-import Ecommerce from '../img/ecommerce.png'
-import GreenFood from '../img/green-food.png'
-import Project from '../img/project.jpg'
+import Ecommerce from '../img/ecommerce.webp'
+import GreenFood from '../img/green-food.webp'
+import Project from '../img/project.webp'
 
 export default function Portfolio() {
 
@@ -10,8 +10,8 @@ export default function Portfolio() {
 
     const project =
         [
-            ['EasyShop', 'Site de E-commerce', '#link', ['React.JS', 'Redux', 'Firebase'], Ecommerce],
-            ['GreenFood', 'Site de recette végetarienne', '#link', ['React.JS', 'Redux', 'Firebase'], GreenFood],
+            ['EasyShop', 'Site de E-commerce (en cours de developpement)', '#link', ['React.JS', 'Redux', 'Firebase'], Ecommerce],
+            ['GreenFood', 'Site de recette végetarienne (en cours de developpement)', '#link', ['React.JS', 'Redux', 'Firebase'], GreenFood],
         ]
 
     const template =

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ScrollIntoView from 'react-scroll-into-view'
-import Logo from '../img/header_logo.png'
+import Logo from '../img/header_logo.webp'
 
 export default function Navbar() {
     const customStyleNavbar = { backgroundColor: '#fff', padding: '1.5rem 0', borderBottom: 'solid 1px #ddd' }

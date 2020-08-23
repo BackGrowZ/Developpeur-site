@@ -1,8 +1,8 @@
 import React from 'react'
 import FormulaireContact from '../ScriptDL/FormulaireContact'
-import Tel from '../img/contact_tel.png'
-import Email from '../img/contact_email.png'
-import Localisation from '../img/contact_localisation.png'
+import Tel from '../img/contact_tel.webp'
+import Email from '../img/contact_email.webp'
+import Localisation from '../img/contact_localisation.webp'
 import CardFlip from './CardFlip'
 
 export default function Contact() {

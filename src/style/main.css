@@ -23,7 +23,7 @@
     width: 100%;
     position: fixed;
     z-index: -1;
-    background-image: url('../img/header.jpg');
+    background-image: url('../img/header.webp');
     background-position: center;
     background-size: cover;
 }
