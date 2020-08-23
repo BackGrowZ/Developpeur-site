@@ -64,7 +64,7 @@ export default function Navbar() {
         <div id='menuMobile'>
             {
                 navbarElement.map((value, key) =>
-                    <div key={`container-${key}`} className='Navbar-items' style={{ width: '100%', color: '#333', textShadow: 'none' }}>
+                    <div key={`container-${key}`} onClick={() => mobilemenuShow()} className='Navbar-items' style={{ width: '100%', color: '#333', textShadow: 'none' }}>
                         <ScrollIntoView selector={value[2]}>
                             <i key={`icon-${key}`} className={`fas fa-${value[0]}`} />
                             <span key={`label-${key}`}>{value[1]}</span>
