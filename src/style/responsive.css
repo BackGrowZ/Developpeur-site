@@ -83,4 +83,7 @@
     #job, #prenom, #nom{
         font-size: larger;
     }
+    #cv-parcours, #cv-experience, #cv-formation, #langages, #frameworks, #bdd {
+    min-width: 100%;
+    }
 }
