@@ -10,16 +10,26 @@ export default function Navbar() {
     const [itemStyle, setItemStyle] = useState(null);
     const [logoStyle, setLogoStyle] = useState({ visibility: 'hidden' });
     const [scrollPosition, setSrollPosition] = useState(0);
-    const animation = { 'navBar': 50 }
+    const [mobileNavbarShow, setMobileNavbarShow] = useState(false)
+
+    const mobilemenuShow = () => {
+        const nav = (value) => document.getElementById('menuMobile').style.maxHeight = value;
+        if (mobileNavbarShow) {
+            nav('0%')
+        } else {
+            nav('100%')
+        }
+        setMobileNavbarShow(!mobileNavbarShow)
+    }
 
     const handleScroll = () => {
         const position = window.pageYOffset;
         setSrollPosition(position);
-        if (position > animation['navBar'] && scrollPosition <= animation['navBar']) {
+        if (position > 50 && scrollPosition <= 50) {
             setNavStyle(customStyleNavbar)
             setItemStyle(customStyleItem)
             setLogoStyle(logoTop)
-        } else if (position < animation['navBar'] && scrollPosition >= animation['navBar']) {
+        } else if (position < 50 && scrollPosition >= 50) {
             setNavStyle(null)
             setItemStyle(null)
             setLogoStyle({ visibility: 'hidden' })
@@ -48,16 +58,40 @@ export default function Navbar() {
             </ScrollIntoView>
         </div>
     )
-    return (
-        <div id='Navbar' style={navStyle}>
-            <div id='logoTop' style={logoStyle}>
-                <ScrollIntoView selector='#header'>
-                    <img src={Logo} height='50px' alt='logo' />
-                </ScrollIntoView>
-            </div>
-            <div className='link-navbar'>
-                {navbar}
-            </div>
+    const menuMobile =
+        <div id='menuMobile'>
+            {
+                navbarElement.map((value, key) =>
+                    <div key={`container-${key}`} className='Navbar-items' style={{ width: '100%', color: '#333', textShadow: 'none' }}>
+                        <ScrollIntoView selector={value[2]}>
+                            <i key={`icon-${key}`} className={`fas fa-${value[0]}`} />
+                            <span key={`label-${key}`}>{value[1]}</span>
+                        </ScrollIntoView>
+                    </div>
+                )
+            }
         </div>
+    const templateMobile =
+        <>
+            <div id='NavbarMobile'>
+                <i className='fas fa-bars fa-2x' style={{cursor:'pointer'}} onClick={() => mobilemenuShow()} />
+            </div>
+            {menuMobile}
+        </>
+
+    return (
+        <>
+            {templateMobile}
+            <div id='Navbar' style={navStyle}>
+                <div id='logoTop' style={logoStyle}>
+                    <ScrollIntoView selector='#header'>
+                        <img src={Logo} height='50px' alt='logo' />
+                    </ScrollIntoView>
+                </div>
+                <div className='link-navbar'>
+                    {navbar}
+                </div>
+            </div>
+        </>
     )
 }

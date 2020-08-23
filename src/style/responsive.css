@@ -59,4 +59,10 @@
     .competence-liste-gauche, .competence-liste-droite {
         text-align: center;
     }
+    #NavbarMobile {
+        display: flex;
+    }
+    #Navbar {
+        display: none;
+    }
 }
