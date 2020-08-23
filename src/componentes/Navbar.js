@@ -23,7 +23,7 @@ export default function Navbar() {
     }
 
     const handleScroll = () => {
-        if (!document.getElementById('Navbar').style.display === 'none') {
+        // if (!document.getElementById('Navbar').style.display === 'none') {
             const position = window.pageYOffset;
             setSrollPosition(position);
             if (position > 50 && scrollPosition <= 50) {
@@ -35,7 +35,7 @@ export default function Navbar() {
                 setItemStyle(null)
                 setLogoStyle({ visibility: 'hidden' })
             }
-        }
+        // }
     }
 
     useEffect(() => {
