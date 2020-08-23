@@ -23,16 +23,18 @@ export default function Navbar() {
     }
 
     const handleScroll = () => {
-        const position = window.pageYOffset;
-        setSrollPosition(position);
-        if (position > 50 && scrollPosition <= 50) {
-            setNavStyle(customStyleNavbar)
-            setItemStyle(customStyleItem)
-            setLogoStyle(logoTop)
-        } else if (position < 50 && scrollPosition >= 50) {
-            setNavStyle(null)
-            setItemStyle(null)
-            setLogoStyle({ visibility: 'hidden' })
+        if (!document.getElementById('Navbar').style.display === 'none') {
+            const position = window.pageYOffset;
+            setSrollPosition(position);
+            if (position > 50 && scrollPosition <= 50) {
+                setNavStyle(customStyleNavbar)
+                setItemStyle(customStyleItem)
+                setLogoStyle(logoTop)
+            } else if (position < 50 && scrollPosition >= 50) {
+                setNavStyle(null)
+                setItemStyle(null)
+                setLogoStyle({ visibility: 'hidden' })
+            }
         }
     }
 
@@ -74,7 +76,7 @@ export default function Navbar() {
     const templateMobile =
         <>
             <div id='NavbarMobile'>
-                <i className='fas fa-bars fa-2x' style={{cursor:'pointer'}} onClick={() => mobilemenuShow()} />
+                <i className='fas fa-bars fa-2x' style={{ cursor: 'pointer' }} onClick={() => mobilemenuShow()} />
             </div>
             {menuMobile}
         </>
