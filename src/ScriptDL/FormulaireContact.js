@@ -74,7 +74,7 @@ export default function FormulaireContact() {
                         </div>
                         <div className="cf-line-row">
                             <label>objet</label>
-                            <input id="cf-sujet" onChange={UpdateState} type="text" placeholder="Objet de votre message" value={sujet} />
+                            <input id="cf-sujet" onChange={UpdateState} type="text" placeholder="Objet du message" value={sujet} />
                         </div>
                         <div className="cf-line-row" id="message-row">
                             <label>message</label>
