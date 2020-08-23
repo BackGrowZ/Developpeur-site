@@ -23,19 +23,17 @@ export default function Navbar() {
     }
 
     const handleScroll = () => {
-        // if (!document.getElementById('Navbar').style.display === 'none') {
-            const position = window.pageYOffset;
-            setSrollPosition(position);
-            if (position > 50 && scrollPosition <= 50) {
-                setNavStyle(customStyleNavbar)
-                setItemStyle(customStyleItem)
-                setLogoStyle(logoTop)
-            } else if (position < 50 && scrollPosition >= 50) {
-                setNavStyle(null)
-                setItemStyle(null)
-                setLogoStyle({ visibility: 'hidden' })
-            }
-        // }
+        const position = window.pageYOffset;
+        setSrollPosition(position);
+        if (position > 50 && scrollPosition <= 50) {
+            setNavStyle(customStyleNavbar)
+            setItemStyle(customStyleItem)
+            setLogoStyle(logoTop)
+        } else if (position < 50 && scrollPosition >= 50) {
+            setNavStyle(null)
+            setItemStyle(null)
+            setLogoStyle({ visibility: 'hidden' })
+        }
     }
 
     useEffect(() => {
@@ -61,7 +59,7 @@ export default function Navbar() {
         </div>
     )
     const menuMobile =
-        <div id='menuMobile'>
+        <div id='menuMobile' onMouseLeave={() => mobilemenuShow()}>
             {
                 navbarElement.map((value, key) =>
                     <div key={`container-${key}`} onClick={() => mobilemenuShow()} className='Navbar-items' style={{ width: '100%', color: '#333', textShadow: 'none' }}>
