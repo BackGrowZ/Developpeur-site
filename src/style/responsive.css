@@ -68,4 +68,19 @@
     #Navbar {
         display: none;
     }
+    .container-detail {
+        flex-wrap: wrap;
+    }
+    .container-formation {
+        width: 80%;
+    }
+    /* .header-title{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+     } */
+    #job, #prenom, #nom{
+        font-size: larger;
+    }
 }
