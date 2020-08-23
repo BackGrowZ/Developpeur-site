@@ -12,12 +12,14 @@ export default function Navbar() {
     const [scrollPosition, setSrollPosition] = useState(0);
     const [mobileNavbarShow, setMobileNavbarShow] = useState(false)
 
-    const mobilemenuShow = () => {
+    const mobilemenuShow = (arg) => {
         const nav = (value) => document.getElementById('menuMobile').style.maxHeight = value;
         if (mobileNavbarShow) {
             nav('0%')
         } else {
-            nav('100%')
+            if (!arg) {
+                nav('100%')
+            }
         }
         setMobileNavbarShow(!mobileNavbarShow)
     }
@@ -59,7 +61,7 @@ export default function Navbar() {
         </div>
     )
     const menuMobile =
-        <div id='menuMobile' onMouseLeave={() => mobilemenuShow()}>
+        <div id='menuMobile'>
             {
                 navbarElement.map((value, key) =>
                     <div key={`container-${key}`} onClick={() => mobilemenuShow()} className='Navbar-items' style={{ width: '100%', color: '#333', textShadow: 'none' }}>
@@ -73,7 +75,7 @@ export default function Navbar() {
         </div>
     const templateMobile =
         <>
-            <div id='NavbarMobile'>
+            <div id='NavbarMobile' onMouseLeave={() => mobilemenuShow('close')}>
                 <i className='fas fa-bars fa-2x' style={{ cursor: 'pointer' }} onClick={() => mobilemenuShow()} />
             </div>
             {menuMobile}
